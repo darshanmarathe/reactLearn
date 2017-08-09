@@ -37,12 +37,12 @@ export default class Layout extends React.Component {
             <Router>
                 <div>
                     <Header />
-                    <br />
-                    <br />
-                    <br />
-                    <Route exact path="/" component={Page} />
-                    <Route path="/about" component={About} />
-                    <Route path="/Technologies" component={Technologies} />
+                    <div id="container">
+                        <Route exact path="/" component={Page} />
+                        <Route path="/about" component={About} />
+                        <Route path="/Technologies" component={Technologies} />
+                    </div>
+                    <Footer />
                 </div>
 
             </Router>

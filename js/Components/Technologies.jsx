@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom'
 
 
-import Language from './Language.jsx';
+import Lang from './Language.jsx';
 
 class Technologies extends Component {
 
@@ -45,8 +45,8 @@ class Technologies extends Component {
 
 
     GetRoutes() {
-        var routes = this.technos.map(function (item) {
-            return <Route key={item.id} path={`/techno/:itemId`} component={Language} />
+        var routes = this.technos.map(function (item , i) {
+            return <Route key={i} path={`/techno/:itemId`} component={Lang2} />
         });
         return routes
     }
@@ -62,3 +62,11 @@ class Technologies extends Component {
 }
 
 export default Technologies;
+
+
+
+const Lang2 = ({match}) =>{
+  return  <div>
+        {match.params.itemId}
+    </div>
+}

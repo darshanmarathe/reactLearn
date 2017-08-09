@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Language extends Component {
+class Lang extends Component {
 
     constructor({ match }) {
         super();
@@ -21,4 +21,4 @@ class Language extends Component {
     }
 }
 
-export default Language;
+export default Lang;
