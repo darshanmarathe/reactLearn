@@ -1,72 +1,54 @@
 import React, { Component } from 'react';
 
 import {
-    BrowserRouter as Router,
     Route,
-    NavLink
+    Link
 } from 'react-router-dom'
 
 
-import Lang from './Language.jsx';
+
+import LanguageStore from '../Stores/LanguageStore';
 
 class Technologies extends Component {
 
-    technos = [
-        {
-            id: 1,
-            name: "C#"
-        },
-        {
-            id: 2,
-            name: "Javascript"
-        },
-        {
-            id: 3,
-            name: "Java"
-        },
-        {
-            id: 4,
-            name: "Android"
+    constructor() {
+        super()
+        this.state = {
+            technos: LanguageStore.GetAll()
         }
-
-    ]
-
+    }
 
     GetLi() {
-        var lis = this.technos.map(function (item) {
+        var lis = this.state.technos.map(function (item) {
             return <li key={item.id} className="list-group-item">
-                <NavLink to={`/techno/${item.id}`}>
+                <Link to={`/Technologies/techno/${item.id}`}>
                     {item.name}
-                </NavLink>
+                </Link>
             </li>
         })
         return lis;
     }
-
-
-    GetRoutes() {
-        var routes = this.technos.map(function (item , i) {
-            return <Route key={i} path={`/techno/:itemId`} component={Lang2} />
-        });
-        return routes
+    componentWillMount = () => {
+        LanguageStore.on("change", () => {
+            this.setState({ technos: LanguageStore.GetAll() })
+        })
     }
 
+
+   
     render() {
+        
         return (
             <ul class="list-group">
                 {this.GetLi()}
-                {this.GetRoutes()}
             </ul>
         );
     }
 }
 
+
+
+
+
 export default Technologies;
 
-
-
-const Lang2 = ({match}) =>{
-  return  <div>
-        {match.params.itemId}
-    </div>
-}

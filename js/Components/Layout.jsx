@@ -1,20 +1,13 @@
 import React from 'React'
-
-
-import {
-    BrowserRouter as Router,
-    Route,
-    NavLink,
-    Link
-} from 'react-router-dom'
-
-
+import { BrowserRouter, Route, Link, Switch } from 'react-router-dom'
 
 import Header from './Header.jsx';
 import Footer from './Footer.jsx';
 import Page from './Page.jsx';
 import Technologies from './Technologies.jsx';
 import About from './About.jsx';
+import Language from './Language.jsx';
+import Feature from "./Feature.jsx";
 
 
 export default class Layout extends React.Component {
@@ -34,18 +27,24 @@ export default class Layout extends React.Component {
 
     render() {
         return (
-            <Router>
+            <BrowserRouter>
                 <div>
                     <Header />
                     <div id="container">
-                        <Route exact path="/" component={Page} />
-                        <Route path="/about" component={About} />
-                        <Route path="/Technologies" component={Technologies} />
+                        <layout>
+                            <Switch>
+                                <Route exact path="/" component={Page} />
+                                <Route path="/about" component={About} />
+                                <Route exact path="/Technologies" component={Technologies} />
+                                <Route path='/Technologies/techno/:itemid' component={Language} />
+                                <Route path='/Technologies/feature/:name' component={Feature} />
+       
+                            </Switch>
+                        </layout>
                     </div>
                     <Footer />
                 </div>
-
-            </Router>
+            </BrowserRouter>
 
         );
     }
