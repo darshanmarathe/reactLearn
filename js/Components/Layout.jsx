@@ -9,6 +9,8 @@ import About from './About.jsx';
 import Language from './Language.jsx';
 import Feature from "./Feature.jsx";
 
+import RoutesComponent from './Routes.jsx';
+
 
 export default class Layout extends React.Component {
 
@@ -31,16 +33,8 @@ export default class Layout extends React.Component {
                 <div>
                     <Header />
                     <div id="container">
-                        <layout>
-                            <Switch>
-                                <Route exact path="/" component={Page} />
-                                <Route path="/about" component={About} />
-                                <Route exact path="/Technologies" component={Technologies} />
-                                <Route path='/Technologies/techno/:itemid' component={Language} />
-                                <Route path='/Technologies/feature/:name' component={Feature} />
-       
-                            </Switch>
-                        </layout>
+                    <RoutesComponent />    
+                        
                     </div>
                     <Footer />
                 </div>

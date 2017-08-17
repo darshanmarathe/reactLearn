@@ -28,13 +28,13 @@ class Header extends Component {
               <NavLink to="/Technologies" className="nav-link">Technologies</NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Contact</a>
+              <NavLink className="nav-link" to="/technos">Contact</NavLink>
             </li>
             <li className="nav-item dropdown">
               <a className="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
               <div className="dropdown-menu" aria-labelledby="dropdown01">
                 <NavLink className="dropdown-item" to="/About">About</NavLink>
-                <a className="dropdown-item" href="#">Another action</a>
+                <NavLink className="dropdown-item" to="/ToMyAss">Another action</NavLink>
                 <a className="dropdown-item" href="#">Something else here</a>
               </div>
             </li>
