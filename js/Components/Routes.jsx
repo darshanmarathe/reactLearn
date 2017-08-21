@@ -14,33 +14,36 @@ import Contact from "./Contact.jsx"
 
 
 
-
-//TODO :: Redirects 
-//TODO :: NOT FOUND 
-//TODO :: Wild card redirects 
-//TODO :: Transitions
-//TODO :: Location (Hash routes)
-
-
 class RoutesComponent extends Component {
+
     render() {
-        console.log("rendered Routes compoennt");
+        console.log(this.props);
+
         return (
+            <Route render={({ location, history, match }) => {
+                return (
+                    <RouteTransition
+                        className="transition-wrapper"
+                        pathname={location.pathname}
+                        {...this.props.presets}>
+                        <Switch>
+                            <Route exact path="/" component={Page} />
+                            <Route exact path="/about" component={About} />
 
-               <Switch>
-                    <Route exact path="/" component={Page} />
-                    <Route exact path="/about" component={About} />
-                    <Route exact path="/Client" component={Client} />
-                    <Route exact path="/Contact" component={Contact} />
 
-                    <Redirect from="/technos" to="/Technologies"/>
-                    <Route exact path="/Technologies" component={Technologies} />
-                    <Route path='/Technologies/techno/:itemid' component={Language} />
-                    <Route path='/Technologies/feature/:name' component={Feature} />
+                            <Route exact path="/Client" component={Client} />
+                            <Route path="/Client/*" component={Client} />
+                            <Route exact path="/Contact" component={Contact} />
+                            <Redirect from="/technos" to="/Technologies" />
+                            <Route exact path="/Technologies" component={Technologies} />
+                            <Route path='/Technologies/techno/:itemid' component={Language} />
+                            <Route path='/Technologies/feature/:name' component={Feature} />
+                            <Route component={PageNotFound} />
+                        </Switch>
 
-                    <Route component={PageNotFound} />
-                </Switch>
-      
+                    </RouteTransition>
+                );
+            }} />
         );
     }
 }

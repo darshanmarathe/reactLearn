@@ -9,7 +9,10 @@ import About from './About.jsx';
 import Language from './Language.jsx';
 import Feature from "./Feature.jsx";
 
+import Presets from './presets.jsx'
 import RoutesComponent from './Routes.jsx';
+
+
 
 
 export default class Layout extends React.Component {
@@ -31,12 +34,17 @@ export default class Layout extends React.Component {
         return (
             <BrowserRouter>
                 <div>
+
+
                     <Header />
                     <div id="container">
-                    <RoutesComponent />    
-                        
+
+
+
+                        <RoutesComponent presets={Presets.slideRight} />
+
+                        <Footer />
                     </div>
-                    <Footer />
                 </div>
             </BrowserRouter>
 
