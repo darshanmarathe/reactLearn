@@ -33,3 +33,12 @@ export function updateTodo(id , text) {
         text, 
     })
 } 
+
+
+export function updateTodoTitle(id , title) {
+    Appdispatcher.dispatch({
+        type : "UPDATE_TODO_TITLE",
+        id,
+        title, 
+    })
+} 

@@ -14,77 +14,75 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
         crossorigin="anonymous"></script>
 
-<style>
-
-    #container{
-        margin-top:60px;
-    }
-
-    html, body {
-        margin: 0;
-        padding: 0;
-        font-family: sans-serif;
-        background-color: #f3f3f3;
-      }
-  
-      #app {
-        margin: 33px auto;
-        max-width: 600px;
-      }
-  
-      .link {
-        display: inline-block;
-        padding: 8px 11px;
-        margin-bottom: 11px;
-        font-weight: 500;
-        opacity: 0.8;
-        text-decoration: none;
-        color: #2a2a2a;
-      }
-  
-      .link.active {
-        text-decoration: underline;
-      }
-  
-      .transition-wrapper {
-        position: relative;
+    <style>
+        #container {
+            margin-top: 60px;
         }
-  
-      .lorem {
-        position: absolute;
-        margin-top: 33px;
-        padding: 33px;
-        background: #fff;
-        color: #3a3a3a;
-        line-height: 150%;
-        box-shadow: 0 2px 1px rgba(0, 0, 0, 0.05);
-      }
-  
 
-.DoneTodo h2{
-    color :gray;
-    text-decoration: line-through;
-}
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background-color: #f3f3f3;
+        }
+
+        #app {
+            margin: 33px auto;
+            max-width: 600px;
+        }
+
+        .link {
+            display: inline-block;
+            padding: 8px 11px;
+            margin-bottom: 11px;
+            font-weight: 500;
+            opacity: 0.8;
+            text-decoration: none;
+            color: #2a2a2a;
+        }
+
+        .link.active {
+            text-decoration: underline;
+        }
+
+        .transition-wrapper {
+            position: relative;
+        }
+
+        .lorem {
+            position: absolute;
+            margin-top: 33px;
+            padding: 33px;
+            background: #fff;
+            color: #3a3a3a;
+            line-height: 150%;
+            box-shadow: 0 2px 1px rgba(0, 0, 0, 0.05);
+        }
 
 
-.UnDoneTodo  h2 {
-    color :green;
-    text-decoration: underline;
-}
+        .DoneTodo .title {
+            color: gray;
+            text-decoration: line-through;
+        }
 
 
-.form-control input{
-    background:rgba(0,0,0,0);
-    border:none;
-}
-
-.form-control input :focus{
-    background:rgba(0,0,0,0);
-    border:1px solid black;
-}
+        .UnDoneTodo .title {
+            color: green;
+            text-decoration: underline;
+        }
 
 
-</style>  
+        .form-control input {
+            background: rgba(0, 0, 0, 0);
+            border: none;
+        }
+
+        .form-control input :focus {
+            background: rgba(0, 0, 0, 0);
+            border: 1px solid black;
+        }
+    </style>
 </head>
 
 <body>
@@ -92,6 +90,7 @@
 
     </div>
     <script src="js/client.min.js">
+
     </script>
 </body>
 

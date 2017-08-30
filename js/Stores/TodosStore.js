@@ -17,10 +17,10 @@ class TodoStore extends EventEmitter {
     }
 
     CreateTodo = (_title) => {
-        this.todos.push({
+        this.todos.unshift({
             id: (this.todos.length + 1),
             title: _title,
-            desc: "",
+            desc: "Click to add your description...",
             isDone: false
         });
 
@@ -56,12 +56,24 @@ class TodoStore extends EventEmitter {
 
 
     UpdateTodo = (id, text) => {
-        debugger;
+
         let todo = _.find(this.todos, {
             id: id
         });
         if (todo != undefined || todo != null)
             todo.desc = text;
+        this.SetStorage();
+
+        this.emit("change");
+    }
+
+    UpdateTodoTitle = (id, text) => {
+
+        let todo = _.find(this.todos, {
+            id: id
+        });
+        if (todo != undefined || todo != null)
+            todo.title = text;
         this.SetStorage();
 
         this.emit("change");
@@ -98,6 +110,9 @@ class TodoStore extends EventEmitter {
                 break;
             case "UPDATE_TODO":
                 this.UpdateTodo(action.id, action.text);
+                break;
+            case "UPDATE_TODO_TITLE":
+                this.UpdateTodoTitle(action.id, action.title);
                 break;
 
             default:
