@@ -43,9 +43,10 @@ export default class Todo extends Component {
 
   DeleteTodo(e) {
     e.preventDefault();
-
-    console.log("Delete ", this.props.todo.id)
-    TodoActions.deleteTodo(this.props.todo.id);
+    if(confirm("are you sure you want to delete this")){
+        console.log("Delete ", this.props.todo.id)
+        TodoActions.deleteTodo(this.props.todo.id);
+      }
   }
 
 
