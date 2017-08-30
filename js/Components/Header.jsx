@@ -30,6 +30,10 @@ class Header extends Component {
             <li className="nav-item">
               <NavLink className="nav-link" to="/technos">Contact</NavLink>
             </li>
+
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/todos">Todos</NavLink>
+            </li>
             <li className="nav-item dropdown">
               <a className="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
               <div className="dropdown-menu" aria-labelledby="dropdown01">

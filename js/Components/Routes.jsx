@@ -10,6 +10,7 @@ import Language from './Language.jsx';
 import Feature from "./Feature.jsx";
 import Client from "./Client.jsx";
 import Contact from "./Contact.jsx"
+import TodoList from "./TodoList.jsx"
 
 
 
@@ -34,6 +35,9 @@ class RoutesComponent extends Component {
                             <Route exact path="/Client" component={Client} />
                             <Route path="/Client/*" component={Client} />
                             <Route exact path="/Contact" component={Contact} />
+                      
+                            <Route exact path="/todos" component={TodoList} />
+                      
                             <Redirect from="/technos" to="/Technologies" />
                             <Route exact path="/Technologies" component={Technologies} />
                             <Route path='/Technologies/techno/:itemid' component={Language} />
