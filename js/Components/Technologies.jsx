@@ -35,13 +35,17 @@ class Technologies extends Component {
     }
 
 
-   
+
     render() {
-        
+
         return (
-            <ul class="list-group">
-                {this.GetLi()}
-            </ul>
+            <div className="row">
+                <div className="col-12">
+                    <ul className="list-group">
+                        {this.GetLi()}
+                    </ul>
+                </div>
+            </div>
         );
     }
 }

@@ -16,9 +16,15 @@ class Footer extends Component {
 
     render() {
         return (
-            <div>
-                This webapp is copyrighted to {this.state.company} with {this.state.year}
-            </div>
+
+            <footer class="footer">
+                <div class="container">
+                    <span class="text-muted">
+                        This webapp is copyrighted to {this.state.company} with {this.state.year}
+                    </span>
+                </div>
+            </footer>
+
         );
     }
 }

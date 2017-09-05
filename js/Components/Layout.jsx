@@ -37,10 +37,11 @@ export default class Layout extends React.Component {
 
 
                     <Header />
-                    <div id="container">
+                    <div className="container">
                         <RoutesComponent presets={Presets.slideRight} />
-                        <Footer />
-                    </div>
+                         </div>
+                         <Footer />
+                 
                 </div>
             </BrowserRouter>
 
