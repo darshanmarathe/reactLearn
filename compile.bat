@@ -1,2 +1,2 @@
-start http-server -o -c-1 
-start webpack --watch
+start http-server -o -c-1
+webpack --watch
