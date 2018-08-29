@@ -4,7 +4,7 @@ class Footer extends Component {
 
     constructor() {
         super();
-        this.state = { "company": "Infoxtech", year: 2017 }
+        this.state = { "company": "Infoxtech", year: new Date() }
 
         setTimeout(() => {
             this.setState({ company: "foxteam" })

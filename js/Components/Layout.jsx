@@ -3,11 +3,6 @@ import { BrowserRouter, Route, Link, Switch } from 'react-router-dom'
 
 import Header from './Header.jsx';
 import Footer from './Footer.jsx';
-import Page from './Page.jsx';
-import Technologies from './Technologies.jsx';
-import About from './About.jsx';
-import Language from './Language.jsx';
-import Feature from "./Feature.jsx";
 
 import Presets from './presets.jsx'
 import RoutesComponent from './Routes.jsx';
